@@ -1027,4 +1027,15 @@ config TOUCHSCREEN_ZFORCE
 	  To compile this driver as a module, choose M here: the
 	  module will be called zforce_ts.
 
+/* dt2w */
+config TOUCHSCREEN_DOUBLETAP2WAKE
+        tristate "DoubleTap2Wake for touchscreens"
+        default n
+
+config TOUCHSCREEN_DOUBLETAP2WAKE_WAKELOCK
+	depends on TOUCHSCREEN_DOUBLETAP2WAKE
+        bool "DoubleTap2Wake for touchscreens"
+        default n
+/* dt2w */
+
 endif

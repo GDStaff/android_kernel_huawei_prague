@@ -16,6 +16,11 @@
 #include <linux/mfd/abx500/ab8500.h>
 #include <linux/of.h>
 #include <linux/slab.h>
+/*DT2W*/
+#ifdef CONFIG_TOUCHSCREEN_DOUBLETAP2WAKE
+#include <linux/input/doubletap2wake.h>
+#endif
+/*DT2W*/
 
 /**
  * struct ab8500_ponkey - ab8500 ponkey information
@@ -110,6 +115,7 @@ static int ab8500_ponkey_probe(struct platform_device *pdev)
 	}
 
 	platform_set_drvdata(pdev, ponkey);
+
 	return 0;
 }
 
